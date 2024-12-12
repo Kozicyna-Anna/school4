@@ -1,6 +1,11 @@
 package ru.hogwarts.school4.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
 
 import java.util.Collection;
 
@@ -16,6 +21,9 @@ public class Faculty {
     @OneToMany(mappedBy = "faculty")
     @JsonIgnore
     private Collection<Student> students;
+
+    public Faculty() {
+    }
 
     public Collection<Student> getStudents() {
         return students;

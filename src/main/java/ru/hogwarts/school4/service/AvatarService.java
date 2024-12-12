@@ -7,7 +7,12 @@ import org.springframework.web.multipart.MultipartFile;
 public class AvatarService {
     private final AvatarService avatarRepository;
 
+    public AvatarService(AvatarService avatarRepository) {
+        this.avatarRepository = avatarRepository;
+    }
+
     public long saveAvatar(MultipartFile file, int studentId) {
+        long il = 0;
         return il;
     }
 }

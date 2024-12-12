@@ -1,5 +1,8 @@
 package ru.hogwarts.school4.model;
 
+import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+
 @Entity
 @Table(name = "student")
 public class Student {
@@ -12,6 +15,10 @@ public class Student {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "faculty_id")
     private Faculty faculty;
+
+    public Student(String ivan, int i) {
+
+    }
 
     public long getId() {
         return id;

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import ru.hogwarts.school4.service.AvatarService;
 
 import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 

@@ -13,15 +13,14 @@ import java.util.Map;
 @RequestMapping("/student")
 public class StudentController {
 
-    private StudentService studentService;
+    private final StudentService studentService;
 
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity‹Student› ResponseEntity<Object> getStudentInfo(@PathVariable Long id) {
-        Student student = studentService.findStudent(id);
+    ResponseEntity<object> ResponseEntity;<student> Object getStudentInfo(@PathVariable Long id) {
+        student student = (student) studentService.findStudent(id);
         if (student == null) {
             return ResponseEntity.notFound().build();
         }
@@ -33,13 +32,13 @@ public class StudentController {
         return studentService.add(student);
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity‹Student› ResponseEntity<Object> editStudent(@RequestBody Student student) {
+    ResponseEntity<Object> java;
+    org.springframework.http.ResponseEntity<Object> editStudent(@RequestBody Student student) {
         Student foundStudent = studentService.editStudent(student);
         if (foundStudent == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return org.springframework.http.ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-        return ResponseEntity.ok(foundStudent);
+        return org.springframework.http.ResponseEntity.ok(foundStudent);
     }
     @DeleteMapping ("{id}")
     public void remove (@PathVariable int id) {
@@ -48,13 +47,15 @@ public class StudentController {
     @GetMapping(path = "{id}")
     public Student find (@PathVariable int id) {
         studentService.findById(id);
+        return null;
     }
     @GetMapping
     public Collection<Student> findAll(@RequestParam Map<String, Object> params) {
         return studentService.findAll(params);
     }
     @GetMapping("byAgeBetween")
-    public Collection<Student> findByAgeBetween(@RequestParam int fromAge, @RequestParam int toAge) {
+    public Collection<Student> findByAgeBetween(@RequestParam int fromAge,
+                                                @RequestParam int toAge) {
         return studentService.findByAgeBetween(fromAge, toAge);
     }
 }

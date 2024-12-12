@@ -33,7 +33,7 @@ public class FacultyControllerIntegrationTest {
     @BeforeEach
     public void clearDB() {
         facultyRepository.deleteAll();
-        faculty = new Faculty("Griffindor", "Green")
+        faculty = new Faculty();
 
         @Test
         void shouldCreateFaculty() {
